@@ -1,74 +1,26 @@
-:root {
-    --primary: #2c3e50;
-    --accent: #27ae60;
-}
+/* Base Style */
+body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #121212; color: white; }
 
-body { margin: 0; font-family: 'Segoe UI', sans-serif; display: flex; background: #34495e; }
+/* Index Style */
+.main-menu { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+h1 { color: #10b981; font-size: 3rem; margin-bottom: 10px; }
+.start-btn { padding: 15px 40px; background: #10b981; color: white; text-decoration: none; border-radius: 30px; font-weight: bold; transition: 0.3s; }
+.start-btn:hover { background: #059669; transform: scale(1.05); }
 
-/* Sidebar menu tetap di kiri saat scroll */
-.sidebar { 
-    width: 300px; background: white; height: 100vh; padding: 20px; 
-    position: fixed; box-shadow: 2px 0 10px rgba(0,0,0,0.3); 
-    overflow-y: auto; z-index: 100; box-sizing: border-box;
-}
+/* Simulator Layout */
+.app-container { display: flex; height: 100vh; }
+.preview-stage { flex: 1; background: radial-gradient(circle, #222, #000); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden; }
+.sidebar { width: 320px; background: #1a1a1a; padding: 25px; border-left: 1px solid #333; }
 
-.control-group { margin-bottom: 18px; }
-label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 6px; color: var(--primary); }
-.input-row { display: flex; gap: 8px; align-items: center; }
-input, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; }
+/* Product & Logo */
+.canvas { position: relative; width: 80%; display: flex; justify-content: center; align-items: center; }
+#product-base { max-width: 100%; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5)); }
+#design-wrapper { position: absolute; width: 150px; cursor: move; }
+#user-logo { width: 100%; mix-blend-mode: multiply; opacity: 0.8; }
 
-.btn-print { 
-    width: 100%; padding: 15px; background: var(--accent); color: white; 
-    border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 16px; margin-top: 10px;
-}
-
-/* Area Preview Kertas */
-.main-preview { margin-left: 300px; padding: 40px; flex: 1; display: flex; justify-content: center; }
-
-#paper { 
-    background: white; position: relative; padding: 10mm; 
-    box-shadow: 0 0 20px rgba(0,0,0,0.5); box-sizing: border-box;
-    overflow: hidden; /* Mencegah gambar tumpah ke luar kertas */
-}
-
-.a4 { width: 210mm; height: 297mm; }
-.a3 { width: 297mm; height: 420mm; }
-
-#stickerContainer {
-    display: grid;
-    gap: 5mm;
-    justify-content: center;
-}
-
-.sticker-item {
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-}
-
-.sticker-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Gambar tidak akan gepeng */
-    
-    /* GARIS PUTIH POTONG (OUTLINE) 5PX */
-    filter: 
-        drop-shadow(5px 0 0 white) 
-        drop-shadow(-5px 0 0 white) 
-        drop-shadow(0 5px 0 white) 
-        drop-shadow(0 -5px 0 white)
-        drop-shadow(5px 5px 0 white)
-        drop-shadow(-5px -5px 0 white)
-        drop-shadow(5px -5px 0 white)
-        drop-shadow(-5px 5px 0 white);
-}
-
-/* Pengaturan khusus saat tombol cetak ditekan */
-@media print {
-    body { background: white; }
-    .sidebar { display: none; }
-    .main-preview { margin: 0; padding: 0; }
-    #paper { box-shadow: none; margin: 0; border: none; }
-}
+/* Controls */
+label { display: block; font-size: 12px; color: #888; margin-top: 20px; text-transform: uppercase; }
+select, input, .save-btn { width: 100%; padding: 12px; margin-top: 8px; background: #222; border: 1px solid #333; color: white; border-radius: 8px; }
+.save-btn { background: #10b981; border: none; font-weight: bold; cursor: pointer; margin-top: 30px; }
+.focus-note { background: #222; padding: 15px; border-radius: 8px; border-left: 4px solid #10b981; margin-top: 20px; font-size: 13px; }
+.back-link { color: #888; text-decoration: none; font-size: 14px; }
