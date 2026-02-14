@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulator Kerja | Brand Design Lab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="preview-stage" id="preview-area">
+            <div class="canvas">
+                <img id="product-base" src="https://www.pngarts.com/files/1/T-Shirt-PNG-Free-Download.png">
+                <div id="design-wrapper">
+                    <img id="user-logo" src="https://cdn-icons-png.flaticon.com/512/1089/1089374.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <a href="index.html" class="back-link">← Kembali</a>
+            <h2>Pengaturan Lab</h2>
+            
+            <label>Pilih Produk</label>
+            <select id="product-switcher">
+                <option value="kaos">👕 Kaos Sablon</option>
+                <option value="kaleng">🥤 Kaleng Minuman</option>
+                <option value="kardus">📦 Kardus Makanan</option>
+            </select>
+
+            <label>Upload Desain (PNG)</label>
+            <input type="file" id="upload-input">
+
+            <label>Ukuran Desain</label>
+            <input type="range" id="size-slider" min="50" max="350" value="150">
+
+            <div class="focus-note">
+                <strong>Mode Belajar:</strong><br>
+                Geser logo untuk menentukan posisi sablon/label yang paling pas.
+            </div>
+
+            <button class="save-btn" onclick="simpan()">Simpan Pratinjau</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
