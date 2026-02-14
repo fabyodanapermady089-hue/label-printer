@@ -5,7 +5,7 @@
 
 body { margin: 0; font-family: 'Segoe UI', sans-serif; display: flex; background: #34495e; }
 
-/* Sidebar */
+/* Sidebar menu tetap di kiri saat scroll */
 .sidebar { 
     width: 300px; background: white; height: 100vh; padding: 20px; 
     position: fixed; box-shadow: 2px 0 10px rgba(0,0,0,0.3); 
@@ -22,47 +22,50 @@ input, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radiu
     border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 16px; margin-top: 10px;
 }
 
-/* Kertas Preview */
+/* Area Preview Kertas */
 .main-preview { margin-left: 300px; padding: 40px; flex: 1; display: flex; justify-content: center; }
 
 #paper { 
-    background: white; position: relative; padding: 20mm; 
+    background: white; position: relative; padding: 10mm; 
     box-shadow: 0 0 20px rgba(0,0,0,0.5); box-sizing: border-box;
+    overflow: hidden; /* Mencegah gambar tumpah ke luar kertas */
 }
 
 .a4 { width: 210mm; height: 297mm; }
 .a3 { width: 297mm; height: 420mm; }
 
-/* Grid Layout System */
 #stickerContainer {
     display: grid;
-    gap: 10mm;
+    gap: 5mm;
     justify-content: center;
-    align-content: flex-start;
 }
 
 .sticker-item {
-    background: white;
-    border: 0.5px dotted #999;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .sticker-item img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Gambar tidak akan gepeng */
+    
+    /* GARIS PUTIH POTONG (OUTLINE) 5PX */
+    filter: 
+        drop-shadow(5px 0 0 white) 
+        drop-shadow(-5px 0 0 white) 
+        drop-shadow(0 5px 0 white) 
+        drop-shadow(0 -5px 0 white)
+        drop-shadow(5px 5px 0 white)
+        drop-shadow(-5px -5px 0 white)
+        drop-shadow(5px -5px 0 white)
+        drop-shadow(-5px 5px 0 white);
 }
 
-/* Crop Marks */
-.crop-mark { position: absolute; width: 10mm; height: 10mm; border-color: #000; border-style: solid; }
-.top-left { top: 5mm; left: 5mm; border-width: 1px 0 0 1px; }
-.top-right { top: 5mm; right: 5mm; border-width: 1px 1px 0 0; }
-.bottom-left { bottom: 5mm; left: 5mm; border-width: 0 0 1px 1px; }
-.bottom-right { bottom: 5mm; right: 5mm; border-width: 0 1px 1px 0; }
-
+/* Pengaturan khusus saat tombol cetak ditekan */
 @media print {
     body { background: white; }
     .sidebar { display: none; }
