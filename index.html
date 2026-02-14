@@ -2,67 +2,24 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sticker Pro Lab - Printing Tool</title>
+    <title>Brand Design Lab | Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div class="sidebar">
-    <h2>Sticker Pro Lab</h2>
-    
-    <div class="control-group">
-        <label>Upload Gambar (PNG Transparan)</label>
-        <input type="file" id="files" accept="image/*">
-        <small style="color: #666; font-size: 11px;">Gunakan gambar tanpa background untuk efek garis putih</small>
-    </div>
-
-    <div class="control-group">
-        <label>Ukuran Kertas</label>
-        <select id="paperSize">
-            <option value="a4">A4 (Standard)</option>
-            <option value="a3">A3 (Besar)</option>
-        </select>
-    </div>
-
-    <div class="control-group">
-        <label>Ukuran Stiker (Lebar x Tinggi cm)</label>
-        <div class="input-row">
-            <input type="number" id="wCm" value="5" step="0.1">
-            <span>x</span>
-            <input type="number" id="hCm" value="6" step="0.1">
+    <div class="main-menu">
+        <h1>🧪 Brand Design Lab</h1>
+        <p>Laboratorium Simulasi Sablon & Kemasan</p>
+        <div class="menu-cards">
+            <div class="card">
+                <h3>Mockup Sablon</h3>
+                <p>Kaos & Fesyen</p>
+            </div>
+            <div class="card">
+                <h3>Mockup Food & Drink</h3>
+                <p>Kaleng & Kardus Makanan</p>
+            </div>
         </div>
+        <a href="simulator.html" class="start-btn">Masuk ke Ruang Simulator</a>
     </div>
-
-    <div class="control-group">
-        <label>Jumlah Copy</label>
-        <input type="number" id="copies" value="8" min="1">
-    </div>
-
-    <div class="control-group">
-        <label>Jarak Tepi Gambar (Padding px)</label>
-        <input type="number" id="padding" value="15">
-    </div>
-
-    <div class="control-group">
-        <label>Layout Kolom</label>
-        <select id="gridCols">
-            <option value="1">1 Kolom</option>
-            <option value="2" selected>2 Kolom</option>
-            <option value="3">3 Kolom</option>
-            <option value="4">4 Kolom</option>
-        </select>
-    </div>
-
-    <button class="btn-print" onclick="window.print()">CETAK / SIMPAN PDF</button>
-</div>
-
-<div class="main-preview">
-    <div id="paper" class="a4">
-        <div id="stickerContainer"></div>
-    </div>
-</div>
-
-<script src="script.js"></script>
 </body>
 </html>
