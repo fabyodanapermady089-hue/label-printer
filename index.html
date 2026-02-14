@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sticker Lab - Vivo Y12s Edition</title>
+    <title>Sticker Pro Lab - Printing Tool</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="sidebar">
     <h2>Sticker Pro Lab</h2>
-    <p style="font-size: 11px; color: #7f8c8d; margin-top: -10px;">Khusus Desain Perisai Owl & Tulip</p>
+    
+    <div class="control-group">
+        <label>Upload Gambar (PNG Transparan)</label>
+        <input type="file" id="files" accept="image/*">
+        <small style="color: #666; font-size: 11px;">Gunakan gambar tanpa background untuk efek garis putih</small>
+    </div>
 
     <div class="control-group">
         <label>Ukuran Kertas</label>
@@ -18,11 +23,6 @@
             <option value="a4">A4 (Standard)</option>
             <option value="a3">A3 (Besar)</option>
         </select>
-    </div>
-
-    <div class="control-group">
-        <label>Upload Gambar</label>
-        <input type="file" id="files" accept="image/*" multiple>
     </div>
 
     <div class="control-group">
@@ -35,21 +35,22 @@
     </div>
 
     <div class="control-group">
-        <label>Jumlah Copy (Misal: 8)</label>
+        <label>Jumlah Copy</label>
         <input type="number" id="copies" value="8" min="1">
     </div>
 
     <div class="control-group">
-        <label>Tebal Putih Tepi (px)</label>
+        <label>Jarak Tepi Gambar (Padding px)</label>
         <input type="number" id="padding" value="15">
     </div>
 
     <div class="control-group">
-        <label>Atur Layout Kolom</label>
+        <label>Layout Kolom</label>
         <select id="gridCols">
             <option value="1">1 Kolom</option>
-            <option value="2" selected>2 Kolom (Rapi)</option>
-            <option value="3">3 Kolom (Padat)</option>
+            <option value="2" selected>2 Kolom</option>
+            <option value="3">3 Kolom</option>
+            <option value="4">4 Kolom</option>
         </select>
     </div>
 
@@ -58,10 +59,6 @@
 
 <div class="main-preview">
     <div id="paper" class="a4">
-        <div class="crop-mark top-left"></div>
-        <div class="crop-mark top-right"></div>
-        <div class="crop-mark bottom-left"></div>
-        <div class="crop-mark bottom-right"></div>
         <div id="stickerContainer"></div>
     </div>
 </div>
